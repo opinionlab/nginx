@@ -24,9 +24,8 @@
 # This is for Chef 10 and earlier where attributes aren't loaded
 # deterministically (resolved in Chef 11).
 node.load_attribute_by_short_filename('source', 'nginx') if node.respond_to?(:load_attribute_by_short_filename)
-
-# This is used to ensure that derived attributes in attributes/source.rb are interpreted properly
-# E.G. only need to set node['nginx']['version'] and node['nginx']['checksum']
+# This is needed so derived attributes in attributes/source.rb get interpreted properly
+# E.g. only need to set node['nginx']['version']
 node.from_file(run_context.resolve_attribute('nginx', 'source'))
 
 nginx_url = node['nginx']['source']['url'] ||
