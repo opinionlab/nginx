@@ -19,6 +19,6 @@ describe 'nginx::ohai_plugin' do
   end
 
   it 'includes the ohai default recipe' do
-    expect(chef_run).to include_recipe('ohai::default')
+    expect(chef_run).to include_recipe('ohai')
   end
 end

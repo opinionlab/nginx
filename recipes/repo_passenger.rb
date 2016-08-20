@@ -23,7 +23,7 @@ when 'rhel', 'fedora'
   end
 
 when 'debian'
-  include_recipe 'apt::default'
+  include_recipe 'apt'
   package 'apt-transport-https'
 
   apt_repository 'phusionpassenger' do

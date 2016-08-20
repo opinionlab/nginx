@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-# running nginx::default as we need service[nginx] to be defined
+# running nginx as we need service[nginx] to be defined
 describe 'nginx::commons' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new.converge('nginx::default', described_recipe)
+    ChefSpec::SoloRunner.new.converge('nginx', described_recipe)
   end
 
   before do
@@ -74,7 +74,7 @@ describe 'nginx::commons' do
       let(:chef_run) do
         ChefSpec::SoloRunner.new do |node|
           node.set['nginx']['default_site_enabled'] = false
-        end.converge('nginx::default', described_recipe)
+        end.converge('nginx', described_recipe)
       end
 
       it 'disables default site' do

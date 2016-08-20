@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-describe 'nginx::default' do
+describe 'nginx' do
   before do
     stub_command('which nginx').and_return(nil)
   end

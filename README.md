@@ -33,7 +33,7 @@ The following cookbook is not a strict dependency because its use can be control
 
 - runit (for nginx::source)
 - On RHEL family distros, the "yum" cookbook is required for `recipe[yum::epel]`.
-- On Ubuntu, when using Nginx.org's stable package, `recipe[apt::default]` is required.
+- On Ubuntu, when using Nginx.org's stable package, `recipe[apt]` is required.
 
 
 ### Platforms

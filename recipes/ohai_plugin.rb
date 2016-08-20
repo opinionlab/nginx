@@ -32,4 +32,4 @@ template "#{node['ohai']['plugin_path']}/nginx.rb" do
   notifies :reload, 'ohai[reload_nginx]', :immediately
 end
 
-include_recipe 'ohai::default'
+include_recipe 'ohai'

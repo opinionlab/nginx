@@ -17,17 +17,17 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[nginx::default]
+      - recipe[nginx]
   - name: source
     run_list:
-      - recipe[nginx::default]
+      - recipe[nginx]
     attributes:
       nginx:
         install_method: source
   - name: upstream_repo
     run_list:
       - recipe[nginx::repo]
-      - recipe[nginx::default]
+      - recipe[nginx]
     attributes:
       nginx:
         repo_source: nginx

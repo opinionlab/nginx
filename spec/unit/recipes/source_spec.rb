@@ -31,7 +31,7 @@ describe 'nginx::source' do
   end
 
   it 'includes build-essential recipe' do
-    expect(chef_run).to include_recipe('build-essential::default')
+    expect(chef_run).to include_recipe('build-essential')
   end
 
   describe 'installs packages dependencies' do
@@ -196,7 +196,7 @@ describe 'nginx::source' do
     end
 
     it 'includes runit recipe' do
-      expect(chef_run).to include_recipe('runit::default')
+      expect(chef_run).to include_recipe('runit')
     end
 
     it 'defines nginx service' do
@@ -212,7 +212,7 @@ describe 'nginx::source' do
     end
 
     it 'includes bluepill recipe' do
-      expect(chef_run).to include_recipe('bluepill::default')
+      expect(chef_run).to include_recipe('bluepill')
     end
 
     it 'configures bluepill' do

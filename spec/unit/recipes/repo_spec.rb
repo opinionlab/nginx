@@ -7,7 +7,7 @@ describe 'nginx::repo' do
     end
 
     it 'includes apt recipe' do
-      expect(chef_run).to include_recipe('apt::default')
+      expect(chef_run).to include_recipe('apt')
     end
 
     it 'adds apt repository' do

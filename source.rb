@@ -45,7 +45,7 @@ end
 include_recipe 'nginx::ohai_plugin'
 include_recipe 'nginx::commons_dir'
 include_recipe 'nginx::commons_script'
-include_recipe 'build-essential::default'
+include_recipe 'build-essential'
 
 src_filepath  = "#{Chef::Config['file_cache_path'] || '/tmp'}/nginx-#{node['nginx']['source']['version']}.tar.gz"
 packages = value_for_platform_family(
@@ -122,7 +122,7 @@ end
 case node['nginx']['init_style']
 when 'runit'
   node.set['nginx']['src_binary'] = node['nginx']['binary']
-  include_recipe 'runit::default'
+  include_recipe 'runit'
 
   runit_service 'nginx'
 
@@ -131,7 +131,7 @@ when 'runit'
     reload_command "#{node['runit']['sv_bin']} hup #{node['runit']['service_dir']}/nginx"
   end
 when 'bluepill'
-  include_recipe 'bluepill::default'
+  include_recipe 'bluepill'
 
   template "#{node['bluepill']['conf_dir']}/nginx.pill" do
     source 'nginx.pill.erb'
